@@ -14,8 +14,28 @@ class EditUser extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            ViewAction::make(),
+            ViewAction::make()
+            ->color('info'),
             DeleteAction::make(),
         ];
+    }
+
+    protected function getFormActions(): array
+    {
+        return[
+            $this->getSaveFormAction()
+                ->label('Guardar cambios')
+                ->color('warning'),
+            
+            $this->getCancelFormAction()
+                ->label('Cancelar')
+                ->color('secondary'),
+
+        ];
+    }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
     }
 }

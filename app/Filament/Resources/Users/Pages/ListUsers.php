@@ -13,7 +13,15 @@ class ListUsers extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()
+            ->label('Crear Usuario')          
+                ->icon('heroicon-o-plus')      
+                ->color('success')             
+                ->extraAttributes([
+                        'style' => 'background: linear-gradient(to right, #044085ff, #13a172ff); color: white;',
+                        'class' => 'btn-icon-white', 
+                ]),
+           
         ];
     }
 }

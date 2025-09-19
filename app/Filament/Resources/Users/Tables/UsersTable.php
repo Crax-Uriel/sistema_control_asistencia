@@ -16,11 +16,15 @@ class UsersTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label('Usuario')
+                    ->alignCenter()
                     ->searchable(),
                 TextColumn::make('email')
-                    ->label('Email address')
+                    ->label('Correo Electronico')
+                    ->alignCenter()
                     ->searchable(),
                 TextColumn::make('email_verified_at')
+                    ->alignCenter()
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('created_at')
@@ -36,8 +40,12 @@ class UsersTable
                 //
             ])
             ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
+                ViewAction::make()
+                    ->button()
+                    ->color('info'),
+                EditAction::make()
+                    ->button()
+                    ->color('warning'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
