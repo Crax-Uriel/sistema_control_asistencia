@@ -47,5 +47,9 @@ class User extends Authenticatable
         ];
     }
 
+    public function practicante(){
+        return $this->hasOne(Practicante::class);
+    }
+
     
 }
