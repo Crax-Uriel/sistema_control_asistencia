@@ -8,6 +8,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 
 class AreasTable
@@ -41,7 +42,15 @@ class AreasTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('status')
+                    ->options([
+                        'Activo' => 'Activo' ,
+                        'Inactivo' => 'Inactivo' ,
+                    ])
+                    ->placeholder('Filtrar por status')
+                    ->label('Status')
+
+                
             ])
             
             ->recordActions([

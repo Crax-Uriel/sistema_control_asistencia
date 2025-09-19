@@ -21,6 +21,7 @@ class AreaResource extends Resource
     protected static ?string $model = Area::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBuildingOffice;
+    protected static ?int $navigationSort = 4;
 
     public static function form(Schema $schema): Schema
     {
