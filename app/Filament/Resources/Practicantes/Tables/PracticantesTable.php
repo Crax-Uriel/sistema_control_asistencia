@@ -23,8 +23,8 @@ class PracticantesTable
                     ->rowIndex()
                     ->alignCenter(),
                 ImageColumn::make('fotografia_practicante')
-                    ->disk('public')       // Indica que está en storage/app/public
-                    ->searchable()
+                    ->disk('public')   
+                    ->rounded()     // Indica que está en storage/app/public
                     ->width(100)
                     ->height(100),
                 TextColumn::make('nombre_completo')
