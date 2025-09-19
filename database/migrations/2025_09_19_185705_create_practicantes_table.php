@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('nombre_practicante',40);
-            $table->string('apellido_practicante',80);
+            $table->string('apellido_paterno_practicante',80);
             $table->string('apellido_materno_practicante',80);
             $table->string('curp_practicante',20);
             $table->text('direccion_practicante');

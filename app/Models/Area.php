@@ -12,4 +12,9 @@ class Area extends Model
         'status',
         
     ];
+
+    public function practicantes()
+    {
+        return $this->hasMany(Practicante::class, 'area_id');
+    }
 }
